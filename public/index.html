@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/login.js"></script>
+    <title>black pizza</title>
+    <style>
+        .none{display:none;}
+    </style>
+</head>
+<body>
+    <header>
+        <div id="bg"></div>
+        <!--header顶部-->
+        <div id="header_top">
+            <ul class="top_left">
+                <li><i class="fa fa-volume-control-phone"></i></li>
+                <li><p> +1 234 567 8910</p></li>
+            </ul>
+            <ul class="top_right">
+                <li>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-rss"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-vk"></i></a>
+                </li>
+                <li>
+                    <a href="#register" data-toggle="modal">注册</a>
+                </li>
+                <li>
+                    <a href="#login" data-toggle="modal">登录</a>
+                </li>
+            </ul>
+        </div>
+        <h1><a href="#">DELICIOUS<span> Food</span></a></h1>
+        <!--header内轮播图-->
+        <div id="header_bigtext">
+            <div class="show">
+                <h3>Lorem ipsum</h3>
+                <p>Curabitur eget metus eget erat vehicula semper vitae sed leo</p>
+                <a href="#myModal" data-toggle="modal">Read More</a>
+            </div>
+            <div>
+                <h3>Nullam semper</h3>
+                <p><p>Quisque nisl risus, egestas in convallis vitae, fringilla cursus magna</p></p>
+                <a href="#myModal" data-toggle="modal">Read More</a>
+            </div>
+            <div>
+                <h3>Duis tempor</h3>
+                <p> Suspendisse bibendum dictum metus, at finibus elit dignissim nec	</p>
+                <a href="#myModal" data-toggle="modal">Read More</a>
+            </div>
+        </div>
+        <a class="pre" href="#"></a>
+        <a class="next" href="#"></a>
+        <ul class="ul">
+            <li class="act"></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <!--导航栏-->
+        <div id="header_last" class="navbar navbar-expand-md navbar-dark justify-content-center">
+            <button class="navbar-toggler align-items" data-toggle="collapse" data-target="#content">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-around" id="content">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#welcome" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#specials" class="nav-link">SPECIALS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#team" class="nav-link">TEAM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#news" class="nav-link">NEWS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#mailus" class="nav-link">MAIL US</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delicious <span>Food</span></h4>
+                        <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                            <img src="images/2.jpg">
+                            <p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis porttitor quis. Suspendisse ultrices hendrerit massa. Nam id metus id tellus ultrices ullamcorper.  Cras tempor massa luctus, varius lacus sit amet, blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="register">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 style="color:black;">用户注册</h2>
+                        <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                    </div>
+                    <div class="modal-body ">
+                        <div><input type="text" id="uname_r"  onblur="checkUname()" placeholder="请输入用户名"/><span  id="unameMsg"></span></div>
+                        <div><input type="password" id="upwd1" onblur="checkUpwd()"  placeholder="请输入密码"/></div>
+                        <div><input type="password" id="upwd2" onblur="checkUpwd()"  placeholder="请再次输入密码"/><span id="upwdMsg"></span></div>
+                        <div><input type="text"  id="email" onblur="checkEmail()" placeholder="请输入邮箱"/><span id="emailMsg"></span></div>
+                        <div><input type="password" id="phone" onblur="checkPhone()" placeholder="请输入联系方式"/><span id="phoneMsg"></span></div>
+                        <div>
+                            <select id="gender">
+                                <option value="1">男</option>
+                                <option value="0">女</option>
+                                <option value="null">不详</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-success" onclick="register()">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="login">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 style="color:black;">用户登录</h2>
+                        <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex justify-content-between">
+                            <input  class="form-control  mt-4 w-75" type="text" id="uname_l" placeholder="请输入用户名"/><span class="name_msg"></span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <input d-inline-block class="form-control  mt-4 mb-4 w-75" type="password" id="upwd" placeholder="请输入密码"/>
+                            <span class="upwd_msg"></span>
+                        </div>
+
+                        <button class="btn btn-success float-right" onclick="user_login()">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //modal -->
+    </header>
+    <div id="toTop">
+        <a href="#"></a>
+    </div>
+    <section>
+        <div id="welcome">
+            <h2>WELCOME</h2>
+            <div class="row">
+                <div class="col-11 col-md-6">
+                    <div class="dd"><img class="img-fluid" src="images/2.jpg"/></div>
+                </div>
+                <div class="col-11 col-md-6">
+                    <div class="dd"><img class="img-fluid" src="images/3.jpg"/></div>
+                </div>
+            </div>
+            <p>Nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus omnis optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae</p>
+        </div>
+        <div id="about">
+            <h2>ABOUT US</h2>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <h5>LOREM IPSUM DOLOR SIT AMET</h5>
+                    <p>Ut fringilla euismod sagittis. Cras semper ante sapien, in ornare nisi euismod eu. Morbi dapibus est non leo vestibulum aliquet. Sed viverra nisi pharetra, scelerisque nisi eu, tempus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In pellentesque, lectus at auctor luctus, lacus nibh dignissim ante, sed maximus arcu odio vitae lectus. <span>Phasellus vestibulum velit sed nisi ultricies scelerisque. Vivamus ligula mauris, euismod in dictum id, tempus ac odio. Etiam tristique felis eros, tincidunt interdum elit gravida et. Donec porttitor vehicula tortor, malesuada aliquet nibh finibus ac. Maecenas consectetur nisi ipsum, blandit finibus quam tristique vitae.</span></p>
+                    <a href="#myModal" data-toggle="modal">MORE</a>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="row p-3">
+                        <div class="col-7 p-1"><img class="img-fluid" src="images/4.jpg"></div>
+                        <div class="col-5 p-1"><img class="img-fluid" src="images/6.jpg"></div>
+                        <div class="col-5 p-1"><img class="img-fluid" src="images/7.jpg"></div>
+                        <div class="col-7 p-1"><img class="img-fluid" src="images/5.jpg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="services">
+            <h2>OUR SERVICES</h2>
+            <div id="fzl">
+                <div class="row d-none d-md-flex">
+                    <div data-toggle="dw" class="saw">
+                        <img  src="images/s1.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Fusce laoreet</p></div>
+                    </div>
+                    <div data-toggle="dw" class="saw">
+                        <img  src="images/s2.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Nulla facilisi</h4><p>Lorem ipsum</p></div>
+                    </div>
+                    <div data-toggle="dw" class="saw">
+                        <img  src="images/s3.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Aenean sed</h4><p>Nunc tincidunt</p></div>
+                    </div>
+                    <div data-toggle="dw" class="saw">
+                        <img  src="images/s4.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Phasellus magna</p></div>
+                    </div>
+                    <div data-toggle="dww">
+                        <img  src="images/s5.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Fusce laoreet</p></div>
+                    </div>
+                    <div data-toggle="dww">
+                        <img  src="images/s6.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Nulla facilisi</h4><p>Lorem ipsum</p></div>
+                    </div>
+                    <div data-toggle="dww">
+                        <img  src="images/s7.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Aenean sed</h4><p>Nunc tincidunt</p></div>
+                    </div>
+                    <div data-toggle="dww">
+                        <img  src="images/s1.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Phasellus magna</p></div>
+                    </div>
+                </div>
+                <div class="row d-none d-sm-flex d-md-none">
+                    <div data-toggle="dw_2" class="saw_2">
+                        <img  src="images/s1.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Fusce laoreet</p></div>
+                    </div>
+                    <div data-toggle="dw_2" class="saw_2">
+                        <img  src="images/s2.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Nulla facilisi</h4><p>Lorem ipsum</p></div>
+                    </div>
+                    <div>
+                        <img  src="images/s3.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Aenean sed</h4><p>Nunc tincidunt</p></div>
+                    </div>
+                    <div>
+                        <img  src="images/s4.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Phasellus magna</p></div>
+                    </div>
+                    <div>
+                        <img  src="images/s5.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Fusce laoreet</p></div>
+                    </div>
+                    <div>
+                        <img  src="images/s6.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Nulla facilisi</h4><p>Lorem ipsum</p></div>
+                    </div>
+                    <div data-toggle="dww_2">
+                        <img  src="images/s7.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Aenean sed</h4><p>Nunc tincidunt</p></div>
+                    </div>
+                    <div data-toggle="dww_2">
+                        <img  src="images/s1.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Phasellus magna</p></div>
+                    </div>
+                </div>
+                <div class="row  d-sm-none">
+                    <div class="saw_3">
+                        <img  src="images/s1.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Fusce laoreet</p></div>
+                    </div>
+                    <div>
+                        <img  src="images/s2.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Nulla facilisi</h4><p>Lorem ipsum</p></div>
+                    </div>
+                    <div>
+                        <img  src="images/s3.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Aenean sed</h4><p>Nunc tincidunt</p></div>
+                    </div>
+                    <div>
+                        <img  src="images/s4.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Phasellus magna</p></div>
+                    </div>
+                    <div>
+                        <img  src="images/s5.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Fusce laoreet</p></div>
+                    </div>
+                    <div>
+                        <img  src="images/s6.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Nulla facilisi</h4><p>Lorem ipsum</p></div>
+                    </div>
+                    <div>
+                        <img  src="images/s7.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Aenean sed</h4><p>Nunc tincidunt</p></div>
+                    </div>
+                    <div>
+                        <img  src="images/s1.jpg">
+                        <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Phasellus magna</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="specials">
+            <h2>TODAY SPECIALS</h2>
+            <div class="row">
+                <div class="col-6 col-lg-3">
+                    <a href="#"><img class="img-fluid" src="images/g1.jpg"></a>
+                    <div class="wrapper">
+                        <h5><span>$</span>12</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a href="#"><img class="img-fluid" src="images/g3.jpg"></a>
+                    <div class="wrapper">
+                        <h5><span>$</span>20</h5>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <a href="#"><img class="img-fluid" src="images/g2.jpg"></a>
+                    <div class="wrapper">
+                        <h5><span>$</span>09</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a href="#"><img class="img-fluid" src="images/g4.jpg"></a>
+                    <div class="wrapper">
+                        <h5><span>$</span>15</h5>
+                    </div>
+                </div>
+                <div class="d-none d-lg-block col-lg-6">
+                    <a href="#"><img class="img-fluid" src="images/g5.jpg"></a>
+                    <div class="wrapper">
+                        <h5><span>$</span>25</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a href="#"><img class="img-fluid" src="images/g6.jpg"></a>
+                    <div class="wrapper">
+                        <h5><span>$</span>10</h5>
+                    </div>
+                </div>
+                <div class="col-12 d-lg-none">
+                    <a href="#"><img class="img-fluid" src="images/g5.jpg"></a>
+                    <div class="wrapper">
+                        <h5><span>$</span>25</h5>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <a href="#"><img class="img-fluid" src="images/g7.jpg"></a>
+                    <div class="wrapper">
+                        <h5><span>$</span>16</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a href="#"><img class="img-fluid" src="images/g8.jpg"></a>
+                    <div class="wrapper">
+                        <h5><span>$</span>05</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <a href="#"><img class="img-fluid" src="images/g9.jpg"></a>
+                    <div class="wrapper">
+                        <h5><span>$</span>22</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="team">
+            <h2>OUR CHEFS</h2>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="mask">
+                        <img class="img-fluid" src="images/t1.jpg">
+                        <div class="view">
+                            <h5>quis nostrud</h5>
+                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="mask">
+                        <img class="img-fluid" src="images/t2.jpg">
+                        <div class="view">
+                            <h5>quis nostrud</h5>
+                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="mask">
+                        <img class="img-fluid" src="images/t3.jpg">
+                        <div class="view">
+                            <h5>quis nostrud</h5>
+                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="mask">
+                        <img class="img-fluid" src="images/t4.jpg">
+                        <div class="view">
+                            <h5>quis nostrud</h5>
+                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="news">
+            <h2>NEWS & EVENTS</h2>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="sh">
+                                <img class="img-fluid" src="images/s4.jpg">
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <a href="#">Cras efficitur nunc at erat ullamcorper blandit.</a>
+                            <a href="#"><i class="fa fa-user"></i> Admin</a>
+                            <p><i class="fa fa-calendar"></i> May 09,2016</p>
+                            <p>Aliquam erat volutpat. Duis vulputate tempus laoreet. Integer viverra eleifend neque, eget dictum lectus. Quisque eu tempor dolor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="sh">
+                                <img class="img-fluid" src="images/s1.jpg">
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <a href="#">Cras efficitur nunc at erat ullamcorper blandit.</a>
+                            <a href="#"><i class="fa fa-user"></i> Admin</a>
+                            <p><i class="fa fa-calendar"></i> Aug 01,2016</p>
+                            <p>Aliquam erat volutpat. Duis vulputate tempus laoreet. Integer viverra eleifend neque, eget dictum lectus. Quisque eu tempor dolor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="sh">
+                                <img class="img-fluid" src="images/s2.jpg">
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <a href="#">Cras efficitur nunc at erat ullamcorper blandit.</a>
+                            <a href="#"><i class="fa fa-user"></i> Admin</a>
+                            <p><i class="fa fa-calendar"></i> Sept 24,2016</p>
+                            <p>Aliquam erat volutpat. Duis vulputate tempus laoreet. Integer viverra eleifend neque, eget dictum lectus. Quisque eu tempor dolor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="sh">
+                                <img class="img-fluid" src="images/s3.jpg">
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <a href="#">Cras efficitur nunc at erat ullamcorper blandit.</a>
+                            <a href="#"><i class="fa fa-user"></i> Admin</a>
+                            <p><i class="fa fa-calendar"></i> June 17,2016</p>
+                            <p>Aliquam erat volutpat. Duis vulputate tempus laoreet. Integer viverra eleifend neque, eget dictum lectus. Quisque eu tempor dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="lunbo">
+            <div id="lb">
+                <div class="play">
+                    <i class="fa fa-quote-right"></i>
+                    <p>Donec feugiat tellus sem, laoreet iaculis orci lobortis vel. Sed sed luctus orci, at lacinia risus. Ut porttitor ante ac tincidunt elementum. Curabitur ex dolor, condimentum vitae nunc vel, pulvinar semper justo. Vestibulum et aliquet magna, maximus dapibus enim. Vestibulum ex lectus, posuere eu viverra at, mattis et enim. Nam efficitur sem et lectus fringilla, at pharetra nulla luctus. Nunc cursus, augue ac ultricies volutpat, neque erat congue justo, ac pretium tellus eros a neque. Integer ipsum sem, consectetur a mollis ac, cursus eu ipsum.</p>
+                    <h5>JOHN SMITH<span>- FOUNDER</span></h5>
+                </div>
+                <div>
+                    <i class="fa fa-quote-right"></i>
+                    <p>Pellentesque urna ex, ultricies a nunc at, pretium maximus nisi. Vestibulum non auctor diam. Mauris eget consectetur mauris. Aenean leo elit, accumsan vel elit vitae, mattis ultricies lacus. Cras consectetur justo lorem, sed dictum sapien eleifend at.Donec sed orci a dui aliquam tempor. Praesent in ipsum ut nunc porttitor lacinia.Donec eu sapien et arcu dictum rutrum.Ut laoreet vitae augue at accumsan. Nam pharetra sagittis purus et condimentum. Vestibulum cursus porttitor pretium.In egestas finibus rutrum. Nulla facilisi.                        </p>
+                    <h5>DIVIDE RULE<span>- CEO</span></h5>
+                </div>
+            </div>
+        </div>
+        <div id="mailus">
+            <h2>CONTACT US</h2>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <h4>Our Address</h4>
+                    <ul>
+                        <li><i class="fa fa-map-marker"></i>1234k Avenue, 4th block, New York City.</li>
+                        <li><i class="fa fa-envelope-o"></i><a href="#">info@example.com</a></li>
+                        <li><i class="fa fa-mobile"></i>+1234 567 567</li>
+                    </ul>
+                    <h4>Contact Form</h4>
+                    <form action="">
+                        <div class="input_div"><input name="Name" type="text"/><label>Name</label></div>
+                        <div class="input_div"><input name="Email" type="text"/><label>Email</label></div>
+                        <div class="input_div"><input name="Subject" type="text"/><label>Subject</label></div>
+                        <div class="input_div">
+                            <textarea name="Message" cols="30" rows="10"></textarea><label>Message</label>
+                        </div>
+                        <input type="submit" value="SEND"/>
+                    </form>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h4>Our Location</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="newsletter">
+        <div class="row">
+            <div class="col-md-6"><h5>Subscribe to our email newsletter to receive updates</h5></div>
+            <div class="col-md-6">
+                <form action="">
+                    <input type="email" placeholder="Subscribe"/>
+                    <button><i class="fa fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h4>WE ARE SOCIAL</h4>
+        <div>
+            <div class="border"></div>
+            <ul>
+                <li class="fa fa-facebook"></li>
+                <li class="fa fa-twitter"></li>
+                <li class="fa fa-rss"></li>
+                <li class="fa fa-vk"></li>
+            </ul>
+            <p>Copyright © 2017.Company name All rights reserved.More Templates <a href="#">模板之家</a>  class="fa fa-facebook" - Collect from <a href="#">网页模板</a></p>
+        </div>
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+</html>

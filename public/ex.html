@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title></title>
+    <style>
+        #services{background:#fff;}
+        #services div.row>div{padding:0;position: relative;  width: 100%;min-height: 1px;display:none;overflow: hidden;}
+        #services div.row:first-child>div{flex: 0 0 25%;max-width: 25%;}
+        #services div.row:nth-child(2)>div{flex: 0 0 50%;max-width: 50%;}
+        #services div.row:last-child>div{flex: 0 0 100%;max-width: 100%;}
+        #services img{max-width: 100%; height: auto;}
+        #services div.row>div.saw,#services div.row>div.saw_2,#services div.row>div.saw_3{display:block;}
+        #services .grid{background: rgba(0, 0, 0, 0.58);width:100%;height:0;position:absolute;
+            top:100%;left:0;transition:.5s all;opacity: 0;color:#fff;}
+    </style>
+</head>
+<body>
+<a href="#myModal" data-toggle="modal">Read More</a>
+<a href="#myModal" data-toggle="modal">Read More</a>
+<!-- modal -->
+<div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Delicious <span>Food</span></h4>
+            </div>
+            <div class="modal-body">
+                <div class="agileits-w3layouts-info">
+                    <img src="images/2.jpg" alt="" />
+                    <p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis porttitor quis. Suspendisse ultrices hendrerit massa. Nam id metus id tellus ultrices ullamcorper.  Cras tempor massa luctus, varius lacus sit amet, blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //modal -->
+<div id="services">
+    <h2>OUR SERVICES</h2>
+    <div id="fzl">
+        <div class="row d-none d-md-flex">
+            <div data-toggle="dw" class="saw">
+                <img  src="images/s1.jpg">
+                <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Fusce laoreet</p></div>
+            </div>
+            <div data-toggle="dw" class="saw">
+                <img  src="images/s2.jpg">
+                <div class="grid"><i class="fa fa-cutlery"></i><h4>Nulla facilisi</h4><p>Lorem ipsum</p></div>
+            </div>
+            <div data-toggle="dw" class="saw">
+                <img  src="images/s3.jpg">
+                <div class="grid"><i class="fa fa-cutlery"></i><h4>Aenean sed</h4><p>Nunc tincidunt</p></div>
+            </div>
+            <div data-toggle="dw" class="saw">
+                <img  src="images/s4.jpg">
+                <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Phasellus magna</p></div>
+            </div>
+            <div data-toggle="dww">
+                <img  src="images/s5.jpg">
+                <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Fusce laoreet</p></div>
+            </div>
+            <div data-toggle="dww">
+                <img  src="images/s6.jpg">
+                <div class="grid"><i class="fa fa-cutlery"></i><h4>Nulla facilisi</h4><p>Lorem ipsum</p></div>
+            </div>
+            <div data-toggle="dww">
+                <img  src="images/s7.jpg">
+                <div class="grid"><i class="fa fa-cutlery"></i><h4>Aenean sed</h4><p>Nunc tincidunt</p></div>
+            </div>
+            <div data-toggle="dww">
+                <img  src="images/s1.jpg">
+                <div class="grid"><i class="fa fa-cutlery"></i><h4>Justo congue</h4><p>Phasellus magna</p></div>
+            </div>
+        </div>
+        <div class="row d-none d-sm-flex d-md-none">
+            <div data-toggle="dw_2" class="saw_2"><img  src="images/s1.jpg"></div>
+            <div data-toggle="dw_2" class="saw_2"><img  src="images/s2.jpg"></div>
+            <div><img  src="images/s3.jpg"></div>
+            <div><img  src="images/s4.jpg"></div>
+            <div><img  src="images/s5.jpg"></div>
+            <div><img  src="images/s6.jpg"></div>
+            <div data-toggle="dww_2"><img  src="images/s7.jpg"></div>
+            <div data-toggle="dww_2"><img  src="images/s1.jpg"></div>
+        </div>
+        <div class="row  d-sm-none">
+            <div class="saw_3"><img  src="images/s1.jpg"></div>
+            <div><img  src="images/s2.jpg"></div>
+            <div><img  src="images/s3.jpg"></div>
+            <div><img  src="images/s4.jpg"></div>
+            <div><img  src="images/s5.jpg"></div>
+            <div><img  src="images/s6.jpg"></div>
+            <div><img  src="images/s7.jpg"></div>
+            <div><img  src="images/s1.jpg"></div>
+        </div>
+    </div>
+</div>
+<script>
+    function s1(){
+        var saws=document.getElementsByClassName("saw");
+        var b1=saws[3].nextElementSibling;
+        var dws=document.querySelectorAll("[data-toggle=dw]");
+        var dwws=document.querySelectorAll("[data-toggle=dww]");
+        if(b1!==null){
+            saws[0].className="";
+            b1.className="saw";
+        }
+        else{
+             for(var i=0;i<4;i++){
+                 var dww=dwws[i];
+                 dww.className="";
+             }
+             for(var dw of dws){
+                dw.className="saw";
+             }
+        }
+    }
+    var x=setInterval(s1,3000);
+    var fzl1=document.querySelector("#fzl>div.row:first-child")
+    fzl1.onmouseover=function(){
+        clearInterval(x);
+    }
+    fzl1.onmouseout=function(){
+        x=setInterval(s1,3000);
+    }
+    function s2(){
+        var saw_2s=document.getElementsByClassName("saw_2");
+        var b2=saw_2s[1].nextElementSibling;
+        var dw_2s=document.querySelectorAll("[data-toggle=dw_2]");
+        var dww_2s=document.querySelectorAll("[data-toggle=dww_2]");
+        if(b2!==null){
+            saw_2s[0].className="";
+            b2.className="saw_2";
+        }
+        else{
+            for(var i=0;i<2;i++){
+                var dww_2=dww_2s[i];
+                dww_2.className="";
+            }
+            for(var dw_2 of dw_2s){
+                dw_2.className="saw_2";
+            }
+        }
+    }
+    var y=setInterval(s2,3000);
+    var fzl2=document.querySelector("#fzl>div.row:nth-child(2)")
+    fzl2.onmouseover=function(){
+        clearInterval(y);
+    }
+    fzl2.onmouseout=function(){
+        y=setInterval(s2,3000);
+    }
+    function s3(){
+        var saw_3=document.getElementsByClassName("saw_3")[0];
+        saw_3.className="";
+        var b3=saw_3.nextElementSibling;
+        var ff=saw_3.parentNode.children[0];
+        if(b3!==null) b3.className="saw_3";
+        else ff.className="saw_3";
+    }
+    var z=setInterval(s3,3000);
+    var fzl3=document.querySelector("#fzl>div.row:last-child")
+    fzl3.onmouseover=function(){
+        clearInterval(z);
+    }
+    fzl3.onmouseout=function(){
+        z=setInterval(s3,3000);
+    }
+</script>
+<script>
+    var grids=document.getElementsByClassName("grid");
+    for(var grid of grids){
+        var pp=grid.parentNode;
+        pp.onmouseover=function(){
+            var grid=this.children[1];
+            grid.style.height="100%";
+            grid. style.opacity="1";
+            grid.style.top="0"
+        }
+        pp.onmouseout=function(){
+            var grid=this.children[1];
+            grid.style.height="0%";
+            grid. style.opacity="0";
+            grid.style.top="100%"
+        }
+    }
+</script>
+</body>
+</html>
